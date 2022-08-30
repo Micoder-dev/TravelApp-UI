@@ -26,7 +26,9 @@
             app:headerLayout="@layout/navigation_view_header"
             app:layout_anchor="@id/main_page_toolbar"
             app:layout_anchorGravity="bottom|center"
-            app:menu="@menu/navigation_view" />
+            app:menu="@menu/navigation_view"
+            android:backgroundTint="#145080"
+            android:tint="@color/teal_200"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

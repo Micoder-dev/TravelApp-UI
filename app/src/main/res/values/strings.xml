@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">TravelAppUI</string>
 
-    <string name="developer">André Mion</string>
-    <string name="website">https://github.com/andremion</string>
+    <string name="developer">MI_Coder</string>
+    <string name="website">https://github.com/micoder-dev</string>
     <string name="menu_item_import">Import</string>
     <string name="menu_item_gallery">Gallery</string>
     <string name="menu_item_slideshow">Slideshow</string>
