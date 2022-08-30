@@ -13,6 +13,7 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.andremion.floatingnavigationview.FloatingNavigationView;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -74,7 +75,21 @@ public class HomeActivity extends AppCompatActivity implements ILottieBottomNavC
         mFloatingNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(android.view.MenuItem item) {
-                Snackbar.make((View) mFloatingNavigationView.getParent(), item.getTitle() + " Selected!", Snackbar.LENGTH_SHORT).show();
+
+                // Custom SnackBar
+                Snackbar snackbar = Snackbar.make((View) mFloatingNavigationView.getParent(), item.getTitle() + " Selected!", Snackbar.LENGTH_SHORT);
+                View snackbarLayout = snackbar.getView();
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+                // Layout must match parent layout type
+                lp.setMargins(10, 120, 0, 0);
+                // Margins relative to the parent view.
+                // This would be 50 from the top left.
+                snackbarLayout.setLayoutParams(lp);
+                snackbar.show();
+
                 mFloatingNavigationView.close();
                 return true;
             }
